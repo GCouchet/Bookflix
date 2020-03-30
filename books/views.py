@@ -102,7 +102,7 @@ def calification(request, book_id):
             old_cal = old_cal.value
             new_cal = round((((bk_cal * votes) - old_cal + user_cal) / votes), 1)
             existent_calobj = Calification.objects.get(book=book, user=request.user)
-            existent_calobj.value = new_cal
+            existent_calobj.value = user_cal
             existent_calobj.save()
         book.calif = new_cal
         book.save()
