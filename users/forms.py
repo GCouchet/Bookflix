@@ -1,9 +1,9 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from .models import User
-import datetime
+from creditcards.forms import CardNumberField, CardExpiryField, SecurityCodeField
 
-# Extendemos del original
+
 class UCFWithExtends(UserCreationForm):
     # Ahora el campo username es de tipo email y cambiamos su texto
     email = forms.EmailField(label="Correo electrónico")
@@ -14,9 +14,9 @@ class UCFWithExtends(UserCreationForm):
     password1 = forms.CharField(widget=forms.PasswordInput, label="Contraseña")
     password2 = forms.CharField(widget=forms.PasswordInput, label="Confirmar contraseña")
 
-    credit_Card = forms.IntegerField(label="N° de tarjeta")
-    expired_Card = forms.DateField(label="Fecha de vencimiento (aaaa-mm-dd)", initial=datetime.date.today)
-    secCode_Card = forms.CharField(widget=forms.PasswordInput, label="Código de seguridad")
+    credit_Card = CardNumberField(label='Card Number')
+    expired_Card = CardExpiryField(label='Expiration Date')
+    secCode_Card = SecurityCodeField(label='CVV/CVC')
 
     class Meta:
         model = User

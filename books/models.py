@@ -5,9 +5,6 @@ from users.models import User
 class Genre(models.Model):
     genre = models.CharField(max_length=50)
 
-    class Meta:
-        verbose_name_plural = 'genres'
-
     def __str__(self):
         return self.genre
 
@@ -15,8 +12,12 @@ class Genre(models.Model):
 class Author(models.Model):
     name = models.CharField(max_length=50)
 
-    class Meta:
-        verbose_name_plural = 'authors'
+    def __str__(self):
+        return self.name
+
+
+class Publisher(models.Model):
+    name = models.CharField(max_length=30)
 
     def __str__(self):
         return self.name
@@ -25,17 +26,33 @@ class Author(models.Model):
 class Book(models.Model):
     title = models.CharField(max_length=50)
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
+    publisher = models.ForeignKey(Publisher, on_delete=models.CASCADE)
     pages = models.IntegerField(blank=True)
     review = models.TextField()
-    genre = models.ForeignKey(Genre, on_delete=models.CASCADE)
-    calification = models.FloatField()
+    genre = models.ManyToManyField(Genre)
+    calif = models.FloatField()
+    votes = models.IntegerField()
     date_added = models.DateTimeField(auto_now_add=True)
-
-    class Meta:
-        verbose_name_plural = 'books'
 
     def __str__(self):
         return self.title
+
+
+class FinishedBooks(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    books = models.ManyToManyField(Book)
+
+
+class Calification(models.Model):
+    book = models.ForeignKey(Book, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    value = models.PositiveSmallIntegerField()
+
+    class Meta:
+        unique_together = ('book', 'user')
+
+    def __str__(self):
+        return str(self.value)
 
 
 class Chapter(models.Model):
@@ -46,11 +63,21 @@ class Chapter(models.Model):
     pages = models.IntegerField(blank=True)
     date_added = models.DateTimeField(auto_now_add=True)
 
-    class Meta:
-        verbose_name_plural = 'chapters'
-
     def __str__(self):
         return self.title
+
+
+class ReadingBook(models.Model):
+    book = models.ForeignKey(Book, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    chapter = models.ForeignKey(Chapter, on_delete=models.CASCADE)
+    page = models.PositiveIntegerField()
+
+    class Meta:
+        unique_together = ('book', 'user')
+
+    def __str__(self):
+        return self.book.title
 
 
 class Comment(models.Model):
@@ -66,4 +93,3 @@ class Comment(models.Model):
         else:
             frase = self.text
         return frase
-

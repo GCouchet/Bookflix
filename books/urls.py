@@ -11,4 +11,7 @@ urlpatterns = [
     path('authors/<int:author_id>/', views.author, name='author'),
     path('genres/', views.genres, name='genres'),
     path('genres/<int:genre_id>/', views.genre, name='genre'),
+    path('search', views.search, name='search'),
+    path('new_comment/<int:book_id>', views.new_comment, name='new_comment'),
+    path('calification/<int:book_id>', views.calification, name='calification'),
 ]

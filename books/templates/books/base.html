@@ -12,6 +12,9 @@
 <body>
   <nav class="navbar navbar-expand-md navbar-light bg-light mb-4 border">
     <a class="navbar-brand" href="{% url "books:index" %}">Bookflix</a>
+    <form class="form" action="{% url 'books:search' %}" method="GET">
+        <input type="text" name="q" value="{{ request.GET.q }}" class="form" placeholder="Search">
+    </form>
     <button class="navbar-toggler" type="button" data-toggle="collapse"
       data-target="#navbarCollapse" aria-controls="navbarCollapse"
       aria-expanded="false" aria-laber="Toggle navigation">

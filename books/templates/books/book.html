@@ -1,4 +1,5 @@
 {% extends "books/base.html" %}
+{% load bootstrap4 %}
 
 {% block page_header %}
   <h3>{{ book }}</h3>
@@ -10,8 +11,21 @@
     <ul>
       <li class="lead">Author: <a class="text-info" href="{% url 'books:author' book.author.id %}">{{ book.author }}</a></li>
       <li class="lead">Pages: {{ book.pages }}</li>
-      <li class="lead">Genre: <a class="text-info" href="{% url 'books:genre' book.genre.id %}">{{ book.genre }}</a></li>
-      <li class="lead">Calification: {{ book.calification }}</li>
+      <li class="lead">Genre:</li>
+      {% for genre in genres %}
+         <a class="text-info" href="{% url 'books:genre' genre.id %}">{{ genre }}</a>
+      {% endfor %}
+      <p><li class="lead">Calification: {{ book.calif }}</li>
+        {% if calform %}
+          <form class="form" action="{% url 'books:calification' book.id %}" method='post'>
+            {% csrf_token %}
+            {% bootstrap_form calform %}
+            {% buttons %}
+              <button class="btn btn-primary" name="submit">Calificate</button>
+            {% endbuttons %}
+          </form>
+        {% endif %}
+        </p>
       <li class="lead">Date added: {{ book.date_added|date:'M d, Y H:i' }}</li>
     </ul>
     <p class="lead">Review: {{ book.review|linebreaks }}</p>
@@ -21,7 +35,7 @@
   {% for chap in chapters %}
     <h5>{{ chap.num }}: <a class="text-secondary" href="{% url 'books:chapter' chap.id %}">{{ chap }}</a></h5>
   {% empty %}
-    No chapters have been added yet.
+    <ul><li>No chapters have been added yet.</li></ul>
   {% endfor %}
 </p>
 {% for comment in comments %}
@@ -38,5 +52,11 @@
     </div>
   </div>
 {% endfor %}
-
+<form class="form" action="{% url 'books:new_comment' book.id %}" method='post'>
+  {% csrf_token %}
+  {% bootstrap_form comform %}
+  {% buttons %}
+    <button class="btn btn-primary" name="submit">Add comment</button>
+  {% endbuttons %}
+</form>
 {% endblock content %}
