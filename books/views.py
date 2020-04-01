@@ -2,7 +2,11 @@ from django.shortcuts import render, redirect
 from .models import Author, Genre, Book, Chapter, Comment, FinishedBooks, Calification
 from .forms import CommentForm, CalificationForm
 from django.contrib.auth.decorators import login_required
-
+from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
+from pdfminer.converter import TextConverter
+from pdfminer.layout import LAParams
+from pdfminer.pdfpage import PDFPage
+import io
 
 def index(request):
     """Home page of library"""
@@ -33,8 +37,40 @@ def book(request, book_id):
 
 
 def chapter(request, chap_id):
+
+    def convert_pdf_to_txt(path):
+
+        rsrcmgr = PDFResourceManager()
+        retstr = io.StringIO()
+        laparams = LAParams()
+        device = TextConverter(rsrcmgr, retstr, codec='utf-8', laparams=laparams)
+        fp = open(path, 'rb')
+
+        interpreter = PDFPageInterpreter(rsrcmgr, device)
+        password = ""
+        maxpages = 0
+        caching = True
+        pagenos = set()
+
+        for page in PDFPage.get_pages(fp, pagenos, maxpages=maxpages,
+                                      password=password,
+                                      caching=caching,
+                                      check_extractable=True):
+            interpreter.process_page(page)
+
+        fp.close()
+        device.close()
+        text = retstr.getvalue()
+        retstr.close()
+
+        return text
+
     chap = Chapter.objects.get(id=chap_id)
-    context = {'chapter': chap}
+    try:
+        cont = convert_pdf_to_txt(str(chap.text))
+    except:
+        cont = 'No se pudo cargar el contenido del capítulo.'
+    context = {'chapter': chap, 'cont': cont}
     return render(request, 'books/chapter.html', context)
 
 
@@ -91,19 +127,13 @@ def calification(request, book_id):
     form = CalificationForm(data=request.POST)
     if form.is_valid():
         user_cal = int(request.POST.get('value'))
-        votes = book.votes
-        bk_cal = book.calif
         if not old_cal:
-            new_cal = round(((bk_cal * votes) + user_cal) / (votes + 1), 1)
-            book.votes = votes + 1
             new_ObjCalification = Calification(book=book, user=request.user, value=user_cal)
             new_ObjCalification.save()
         else:
-            old_cal = old_cal.value
-            new_cal = round((((bk_cal * votes) - old_cal + user_cal) / votes), 1)
             existent_calobj = Calification.objects.get(book=book, user=request.user)
             existent_calobj.value = user_cal
             existent_calobj.save()
-        book.calif = new_cal
+        book.calif = sum(map(lambda x: x.value, Calification.objects.filter(book=book))) / len(Calification.objects.filter(book=book))
         book.save()
     return redirect('books:book', book_id=book_id)
