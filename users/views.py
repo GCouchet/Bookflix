@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login
-from .forms import UCFWithExtends
-
+from .forms import UCFWithExtends, creationProfile
+from .models import Profile
 
 def register(request):
     """Register a new user"""
