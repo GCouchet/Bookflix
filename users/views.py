@@ -18,19 +18,23 @@ def register(request):
 
 
 def newProfile(request):
+    usuario = request.user
+    countProfiles = Profile.objects.filter(user=usuario).count()
+
     if request.method != 'POST':
-        # se muestra un form en blanco para registrarlo
         form = creationProfile()
     else:
-        # se procesa un form completado
         form = creationProfile(request.POST)
         if form.is_valid():
-            new_profile = form.save(commit=False)
-            new_profile.user = request.user
-            new_profile.save()
-            return redirect('books:index')
+            if (countProfiles < usuario.subscription.limitProfiles):
+                new_profile = form.save(commit=False)
+                new_profile.user = usuario
+                new_profile.save()
+                return redirect('books:index')
+            else:
+                #acá daría el msg de error: max perfiles permitidos
+                return redirect('books:index')
 
-    # se muestra un form vacio o invalido
     context = {'form': form}
     return render(request, 'registration/newProfile.html', context)
 
