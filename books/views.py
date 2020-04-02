@@ -8,19 +8,40 @@ from pdfminer.layout import LAParams
 from pdfminer.pdfpage import PDFPage
 import io
 
+
+def verificateUser(funcion):
+
+    def verificate(req):
+        if not req.user.is_authenticated:
+            return redirect('users:login')
+        else:
+            #if !(req.user.expiredPay < datetime.now)
+            #    return render(req, 'restrictions/needPayment.html')
+            if 'myProfile' in req.session:
+                #profile = req.session.get['myProfile']
+                return funcion(req)
+            else:
+                profiles = Profile.objects.all()
+                profiles = profiles.filter(user=req.user)
+                context = {'profiles': profiles}
+                return render(req, 'books/selectProfile.html', context)
+
+    return verificate
+
+
+@verificateUser
 def index(request):
     """Home page of library"""
     return render(request, 'books/index.html')
 
-
+@verificateUser
 def books(request):
     """Show all books"""
     bookslst = Book.objects.order_by('title')
     context = {'books': bookslst}
     return render(request, 'books/books_list.html', context)
 
-
-@login_required
+@verificateUser
 def book(request, book_id):
     bk = Book.objects.get(id=book_id)
     chapters = Chapter.objects.filter(book=bk).order_by('num')
@@ -35,7 +56,7 @@ def book(request, book_id):
                'calform': calform, 'comform': comform, 'genres': genres}
     return render(request, 'books/book.html', context)
 
-
+@verificateUser
 def chapter(request, chap_id):
 
     def convert_pdf_to_txt(path):
@@ -73,33 +94,33 @@ def chapter(request, chap_id):
     context = {'chapter': chap, 'cont': cont}
     return render(request, 'books/chapter.html', context)
 
-
+@verificateUser
 def authors(request):
     authrs = Author.objects.order_by('name')
     context = {'authors': authrs}
     return render(request, 'books/authors.html', context)
 
-
+@verificateUser
 def genres(request):
     gnres = Genre.objects.order_by('genre')
     context = {'genres': gnres}
     return render(request, 'books/genres.html', context)
 
-
+@verificateUser
 def author(request, author_id):
     author = Author.objects.get(id=author_id)
     books = Book.objects.filter(author=author).order_by('title')
     context = {'author': author, 'books': books}
     return render(request, 'books/author.html', context)
 
-
+@verificateUser
 def genre(request, genre_id):
     gnre = Genre.objects.get(id=genre_id)
     books = Book.objects.filter(genre=gnre).order_by('title')
     context = {'genre': gnre, 'books': books}
     return render(request, 'books/genre.html', context)
 
-
+@verificateUser
 def search(request):
     search = request.GET.get('q')
     books = Book.objects.filter(title__icontains=search)
@@ -108,7 +129,7 @@ def search(request):
     context = {'search': search, 'books': books, 'authors': authors, 'genres': genres}
     return render(request, 'books/search.html', context)
 
-
+@verificateUser
 def new_comment(request, book_id):
     book = Book.objects.get(id=book_id)
     form = CommentForm(data=request.POST)
@@ -120,7 +141,7 @@ def new_comment(request, book_id):
     return redirect('books:book', book_id=book_id)
 
 
-@login_required
+@verificateUser
 def calification(request, book_id):
     book = Book.objects.get(id=book_id)
     old_cal = Calification.objects.filter(book=book, user=request.user).first()

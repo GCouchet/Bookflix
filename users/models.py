@@ -14,3 +14,11 @@ class User(AbstractUser):
 
     def _str_(self):
         return self.username
+
+
+class Profile(models.Model):
+    name = models.CharField(max_length=10)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
