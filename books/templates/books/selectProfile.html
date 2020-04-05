@@ -1,0 +1,32 @@
+{% extends "books/base.html" %}
+
+{% block page_header %}
+
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+{% endblock page_header %}
+
+{% block content %}
+
+<div class="jumbotron">
+        {% if profiles.exists %}
+            <div class="container">
+                <div class="row">
+                    {% for profiles in profiles %}
+                            <div class="col-4">
+                                <h2 style="text-align: center;"><a class="text-secondary" href="{% url 'users:loginProfile' profiles.id %}">{{ profiles.name }}</a></h2>
+                            </div>
+                    {% endfor %}
+                <div>
+            </div>
+        {% endif %}
+
+        <form method="GET" action="{% url 'users:newProfile' %}">
+            <button class="button-primary" type="submit">Create Profile</button>
+        </form>
+</div>
+
+{% endblock content %}

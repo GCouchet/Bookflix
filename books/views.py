@@ -2,21 +2,46 @@ from django.shortcuts import render, redirect
 from .models import Author, Genre, Book, Chapter, Comment, FinishedBooks, Calification
 from .forms import CommentForm, CalificationForm
 from django.contrib.auth.decorators import login_required
+from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
+from pdfminer.converter import TextConverter
+from pdfminer.layout import LAParams
+from pdfminer.pdfpage import PDFPage
+import io
 
 
+def verificateUser(funcion):
+
+    def verificate(req):
+        if not req.user.is_authenticated:
+            return redirect('users:login')
+        else:
+            #if !(req.user.expiredPay < datetime.now)
+            #    return render(req, 'restrictions/needPayment.html')
+            if 'myProfile' in req.session:
+                #profile = req.session.get['myProfile']
+                return funcion(req)
+            else:
+                profiles = Profile.objects.all()
+                profiles = profiles.filter(user=req.user)
+                context = {'profiles': profiles}
+                return render(req, 'books/selectProfile.html', context)
+
+    return verificate
+
+
+@verificateUser
 def index(request):
     """Home page of library"""
     return render(request, 'books/index.html')
 
-
+@verificateUser
 def books(request):
     """Show all books"""
     bookslst = Book.objects.order_by('title')
     context = {'books': bookslst}
     return render(request, 'books/books_list.html', context)
 
-
-@login_required
+@verificateUser
 def book(request, book_id):
     bk = Book.objects.get(id=book_id)
     chapters = Chapter.objects.filter(book=bk).order_by('num')
@@ -31,39 +56,71 @@ def book(request, book_id):
                'calform': calform, 'comform': comform, 'genres': genres}
     return render(request, 'books/book.html', context)
 
-
+@verificateUser
 def chapter(request, chap_id):
+
+    def convert_pdf_to_txt(path):
+
+        rsrcmgr = PDFResourceManager()
+        retstr = io.StringIO()
+        laparams = LAParams()
+        device = TextConverter(rsrcmgr, retstr, codec='utf-8', laparams=laparams)
+        fp = open(path, 'rb')
+
+        interpreter = PDFPageInterpreter(rsrcmgr, device)
+        password = ""
+        maxpages = 0
+        caching = True
+        pagenos = set()
+
+        for page in PDFPage.get_pages(fp, pagenos, maxpages=maxpages,
+                                      password=password,
+                                      caching=caching,
+                                      check_extractable=True):
+            interpreter.process_page(page)
+
+        fp.close()
+        device.close()
+        text = retstr.getvalue()
+        retstr.close()
+
+        return text
+
     chap = Chapter.objects.get(id=chap_id)
-    context = {'chapter': chap}
+    try:
+        cont = convert_pdf_to_txt(str(chap.text))
+    except:
+        cont = 'No se pudo cargar el contenido del capítulo.'
+    context = {'chapter': chap, 'cont': cont}
     return render(request, 'books/chapter.html', context)
 
-
+@verificateUser
 def authors(request):
     authrs = Author.objects.order_by('name')
     context = {'authors': authrs}
     return render(request, 'books/authors.html', context)
 
-
+@verificateUser
 def genres(request):
     gnres = Genre.objects.order_by('genre')
     context = {'genres': gnres}
     return render(request, 'books/genres.html', context)
 
-
+@verificateUser
 def author(request, author_id):
     author = Author.objects.get(id=author_id)
     books = Book.objects.filter(author=author).order_by('title')
     context = {'author': author, 'books': books}
     return render(request, 'books/author.html', context)
 
-
+@verificateUser
 def genre(request, genre_id):
     gnre = Genre.objects.get(id=genre_id)
     books = Book.objects.filter(genre=gnre).order_by('title')
     context = {'genre': gnre, 'books': books}
     return render(request, 'books/genre.html', context)
 
-
+@verificateUser
 def search(request):
     search = request.GET.get('q')
     books = Book.objects.filter(title__icontains=search)
@@ -72,7 +129,7 @@ def search(request):
     context = {'search': search, 'books': books, 'authors': authors, 'genres': genres}
     return render(request, 'books/search.html', context)
 
-
+@verificateUser
 def new_comment(request, book_id):
     book = Book.objects.get(id=book_id)
     form = CommentForm(data=request.POST)
@@ -84,26 +141,20 @@ def new_comment(request, book_id):
     return redirect('books:book', book_id=book_id)
 
 
-@login_required
+@verificateUser
 def calification(request, book_id):
     book = Book.objects.get(id=book_id)
     old_cal = Calification.objects.filter(book=book, user=request.user).first()
     form = CalificationForm(data=request.POST)
     if form.is_valid():
         user_cal = int(request.POST.get('value'))
-        votes = book.votes
-        bk_cal = book.calif
         if not old_cal:
-            new_cal = round(((bk_cal * votes) + user_cal) / (votes + 1), 1)
-            book.votes = votes + 1
             new_ObjCalification = Calification(book=book, user=request.user, value=user_cal)
             new_ObjCalification.save()
         else:
-            old_cal = old_cal.value
-            new_cal = round((((bk_cal * votes) - old_cal + user_cal) / votes), 1)
             existent_calobj = Calification.objects.get(book=book, user=request.user)
             existent_calobj.value = user_cal
             existent_calobj.save()
-        book.calif = new_cal
+        book.calif = sum(map(lambda x: x.value, Calification.objects.filter(book=book))) / len(Calification.objects.filter(book=book))
         book.save()
     return redirect('books:book', book_id=book_id)
