@@ -96,10 +96,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Clase Membresía agregada.&#10;Limite de creación de perfiles según la membresía del usuario.&#10;Selección de membresia al momento de registrarse.&#10;El administrador puede ahora crear diferentes tipos de membresía desde el panel de administrador." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="247" y="113" key="CommitChangelistDialog2" timestamp="1586129265149">
+    <state x="247" y="113" key="CommitChangelistDialog2" timestamp="1586129440833">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="247" y="113" key="CommitChangelistDialog2/0.0.1280.984@0.0.1280.984" timestamp="1586129265149" />
+    <state x="247" y="113" key="CommitChangelistDialog2/0.0.1280.984@0.0.1280.984" timestamp="1586129440833" />
     <state x="185" y="300" key="Vcs.Push.Dialog.v2" timestamp="1585868302207">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
