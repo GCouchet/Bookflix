@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
-from .models import User, Profile, Membership
+from .models import User, Membership
 from creditcards.forms import CardNumberField, CardExpiryField, SecurityCodeField
 
 
@@ -23,12 +23,3 @@ class UCFWithExtends(UserCreationForm):
     class Meta:
         model = User
         fields = ["username", "email", "first_name", "last_name", "age", "password1", "password2", "credit_Card", "expired_Card", "secCode_Card", "subscription"]
-
-
-class creationProfile(forms.ModelForm):
-    name = forms.CharField(max_length=30, label="Nombre del perfil")
-
-    class Meta:
-        model = Profile
-        fields = ["name"]
-        exclude = ["user"]

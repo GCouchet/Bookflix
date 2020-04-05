@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     # my apps
     'books',
     'users',
+    'profiles',
     # third party apps
     'bootstrap4',
     # default apps

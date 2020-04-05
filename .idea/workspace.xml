@@ -1,12 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f65f96c1-930a-4a4a-a184-41fdf635109a" name="Default Changelist" comment="">
+    <list default="true" id="f65f96c1-930a-4a4a-a184-41fdf635109a" name="Default Changelist" comment="Clase Membresía agregada.&#10;Limite de creación de perfiles según la membresía del usuario.&#10;Selección de membresia al momento de registrarse.&#10;El administrador puede ahora crear diferentes tipos de membresía desde el panel de administrador.">
+      <change afterPath="$PROJECT_DIR$/profiles/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/profiles/templates/newProfile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/profiles/templates/profile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/profiles/templates/selectProfile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/profiles/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/proyecto.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/proyecto.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/templates/books/selectProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/books/templates/books/selectProfile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookflix/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookflix/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookflix/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookflix/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/templates/books/selectProfile.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/users/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/templates/profile.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/templates/registration/newProfile.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,6 +37,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="ProjectId" id="1ZxoKSQ2vewRzLmOULgJTwX6dJ0" />
   <component name="ProjectViewState">
@@ -34,7 +48,12 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../reservas_dj" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/profiles" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Norita\PycharmProjects\Bookflix\profiles" />
+    </key>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -61,21 +80,33 @@
       <option name="project" value="LOCAL" />
       <updated>1585793513854</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Clase Membresía agregada.&#10;Limite de creación de perfiles según la membresía del usuario.&#10;Selección de membresia al momento de registrarse.&#10;El administrador puede ahora crear diferentes tipos de membresía desde el panel de administrador.">
+      <created>1585868300167</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1585868300167</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Creación y selección de perfiles.&#10;Se guarda en request.session.get['myProfile'] el id del perfil seleccionado.&#10;(falta eliminar perfil y limite de perfiles por cuenta)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creación y selección de perfiles.&#10;Se guarda en request.session.get['myProfile'] el id del perfil seleccionado.&#10;(falta eliminar perfil y limite de perfiles por cuenta)" />
+    <MESSAGE value="Clase Membresía agregada.&#10;Limite de creación de perfiles según la membresía del usuario.&#10;Selección de membresia al momento de registrarse.&#10;El administrador puede ahora crear diferentes tipos de membresía desde el panel de administrador." />
+    <option name="LAST_COMMIT_MESSAGE" value="Clase Membresía agregada.&#10;Limite de creación de perfiles según la membresía del usuario.&#10;Selección de membresia al momento de registrarse.&#10;El administrador puede ahora crear diferentes tipos de membresía desde el panel de administrador." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="247" y="133" key="CommitChangelistDialog2" timestamp="1585793512319">
+    <state x="247" y="113" key="CommitChangelistDialog2" timestamp="1586129265149">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="247" y="133" key="CommitChangelistDialog2/0.0.1280.984@0.0.1280.984" timestamp="1585793512319" />
-    <state x="185" y="300" key="Vcs.Push.Dialog.v2" timestamp="1585793515252">
+    <state x="247" y="113" key="CommitChangelistDialog2/0.0.1280.984@0.0.1280.984" timestamp="1586129265149" />
+    <state x="185" y="300" key="Vcs.Push.Dialog.v2" timestamp="1585868302207">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="185" y="300" key="Vcs.Push.Dialog.v2/0.0.1280.984@0.0.1280.984" timestamp="1585793515252" />
+    <state x="185" y="300" key="Vcs.Push.Dialog.v2/0.0.1280.984@0.0.1280.984" timestamp="1585868302207" />
+    <state x="449" y="473" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586126221862">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state x="449" y="473" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.984@0.0.1280.984" timestamp="1586126221862" />
   </component>
 </project>

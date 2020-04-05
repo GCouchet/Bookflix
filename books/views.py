@@ -15,16 +15,14 @@ def verificateUser(funcion):
         if not req.user.is_authenticated:
             return redirect('users:login')
         else:
+            #acá deje preparado el if para la falta de pago para cuando esté el atributo ya validado
             #if !(req.user.expiredPay < datetime.now)
             #    return render(req, 'restrictions/needPayment.html')
             if 'myProfile' in req.session:
                 #profile = req.session.get['myProfile']
                 return funcion(req)
             else:
-                profiles = Profile.objects.all()
-                profiles = profiles.filter(user=req.user)
-                context = {'profiles': profiles}
-                return render(req, 'books/selectProfile.html', context)
+                return redirect('profiles:selectProfile')
 
     return verificate
 

@@ -17,14 +17,18 @@
                 <div class="row">
                     {% for profiles in profiles %}
                             <div class="col-4">
-                                <h2 style="text-align: center;"><a class="text-secondary" href="{% url 'users:loginProfile' profiles.id %}">{{ profiles.name }}</a></h2>
+                                <h2 style="text-align: center;"><a class="text-secondary" href="{% url 'profiles:loginProfile' profiles.id %}">{{ profiles.name }}</a></h2>
+                                <form action="{% url 'profiles:deleteProfile' profiles.id %}" method="POST">
+                                    {% csrf_token %}
+                                    <button class="button-primary" type="submit">Delete</button>
+                                </form>
                             </div>
                     {% endfor %}
                 <div>
             </div>
         {% endif %}
 
-        <form method="GET" action="{% url 'users:newProfile' %}">
+        <form method="GET" action="{% url 'profiles:newProfile' %}">
             <button class="button-primary" type="submit">Create Profile</button>
         </form>
 </div>
