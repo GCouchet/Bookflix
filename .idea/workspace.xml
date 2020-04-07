@@ -1,28 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f65f96c1-930a-4a4a-a184-41fdf635109a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/proyecto.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/proyecto.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cuestionario_-_Plantilla.doc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entrevista_-_Plantilla.doc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/migrations/0002_auto_20200330_0227.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/templates/books/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/books/templates/books/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/templates/books/book.html" beforeDir="false" afterPath="$PROJECT_DIR$/books/templates/books/book.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profiles/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/profiles/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profiles/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/profiles/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profiles/templates/newProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/profiles/templates/newProfile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profiles/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/profiles/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Épicas_-_Plantilla.doc" beforeDir="false" />
-    </list>
+    <list default="true" id="f65f96c1-930a-4a4a-a184-41fdf635109a" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,7 +174,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585868300167</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="decorator algo cambiado&#10;comentarios y calificaciones terminadas, ponele">
+      <created>1586217695804</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1586217695804</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
