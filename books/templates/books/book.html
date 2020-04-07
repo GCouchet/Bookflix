@@ -41,7 +41,7 @@
 {% for comment in comments %}
   <div class="card mb-3">
     <h4 class="card-header">
-      {{ comment.user }}
+      {{ comment.profile }}
       <small>{{ comment.date_added|date:'M d, Y H:i' }}</small>
     </h4>
     <div class="card-body">
@@ -50,13 +50,19 @@
       {% endif %}
       <p class="lead">{{ comment.text|linebreaks }}</p>
     </div>
+    {% if comment.profile == profile %}
+    <small><a href="{% url 'books:edit_comment' comment.id %}">edit</a></small>
+    <small><a href="{% url 'books:delete_comment' comment.id %}">delete</a></small>
+    {% endif %}
   </div>
 {% endfor %}
-<form class="form" action="{% url 'books:new_comment' book.id %}" method='post'>
-  {% csrf_token %}
-  {% bootstrap_form comform %}
-  {% buttons %}
-    <button class="btn btn-primary" name="submit">Add comment</button>
-  {% endbuttons %}
-</form>
+{% if comform %}
+  <form class="form" action="{% url 'books:new_comment' book.id %}" method='post'>
+    {% csrf_token %}
+    {% bootstrap_form comform %}
+    {% buttons %}
+      <button class="btn btn-primary" name="submit">Add comment</button>
+    {% endbuttons %}
+  </form>
+{% endif %}
 {% endblock content %}

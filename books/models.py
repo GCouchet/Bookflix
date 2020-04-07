@@ -1,5 +1,6 @@
 from django.db import models
 from users.models import User
+from profiles.models import Profile
 
 
 class Genre(models.Model):
@@ -31,7 +32,6 @@ class Book(models.Model):
     review = models.TextField()
     genre = models.ManyToManyField(Genre)
     calif = models.FloatField()
-    votes = models.IntegerField()
     date_added = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -39,17 +39,17 @@ class Book(models.Model):
 
 
 class FinishedBooks(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    profile = models.OneToOneField(Profile, on_delete=models.CASCADE)
     books = models.ManyToManyField(Book)
 
 
 class Calification(models.Model):
     book = models.ForeignKey(Book, on_delete=models.CASCADE)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
     value = models.PositiveSmallIntegerField()
 
     class Meta:
-        unique_together = ('book', 'user')
+        unique_together = ('book', 'profile')
 
     def __str__(self):
         return str(self.value)
@@ -69,12 +69,12 @@ class Chapter(models.Model):
 
 class ReadingBook(models.Model):
     book = models.ForeignKey(Book, on_delete=models.CASCADE)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
     chapter = models.ForeignKey(Chapter, on_delete=models.CASCADE)
     page = models.PositiveIntegerField()
 
     class Meta:
-        unique_together = ('book', 'user')
+        unique_together = ('book', 'profile')
 
     def __str__(self):
         return self.book.title
@@ -84,7 +84,7 @@ class Comment(models.Model):
     book = models.ForeignKey(Book, on_delete=models.CASCADE)
     text = models.TextField()
     date_added = models.DateTimeField(auto_now_add=True)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
     spoiler = models.BooleanField()
 
     def __str__(self):
@@ -93,3 +93,6 @@ class Comment(models.Model):
         else:
             frase = self.text
         return frase
+
+    class Meta:
+        unique_together = ('book', 'profile')

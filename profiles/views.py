@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import creationProfile
 from .models import Profile
 
+
 def newProfile(request):
     usuario = request.user
     countProfiles = Profile.objects.filter(user=usuario).count()
@@ -33,6 +34,7 @@ def deleteProfile(request, profile_id):
 def selectProfile(request):
     profiles = Profile.objects.all()
     profiles = profiles.filter(user=request.user)
+    request.session['myProfile'] = None
     context = {'profiles': profiles}
     return render(request, 'selectProfile.html', context)
 

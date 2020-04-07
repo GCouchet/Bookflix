@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login
 from .forms import UCFWithExtends
 
+
 def register(request):
     """Register a new user"""
     if request.method != 'POST':

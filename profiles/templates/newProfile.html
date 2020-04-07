@@ -3,8 +3,8 @@
 {% block content %}
 
   <form method="post" action="{% url 'profiles:newProfile' %}">
-  {% csrf_token %}
-  {{ form.as_p }}
+    {% csrf_token %}
+    {{ form.as_p }}
   <button name="submit">Create Profile</button>
   <input type="hidden" name="next" value="{% url 'books:index' %}" />
   </form>

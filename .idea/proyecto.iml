@@ -4,10 +4,7 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="Python 3.7 (Bookflix)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="devsar" />
-    <orderEntry type="module" module-name="learning_log" />
-    <orderEntry type="module" module-name="reservas_dj" />
   </component>
 </module>

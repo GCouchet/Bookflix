@@ -1,31 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f65f96c1-930a-4a4a-a184-41fdf635109a" name="Default Changelist" comment="Clase Membresía agregada.&#10;Limite de creación de perfiles según la membresía del usuario.&#10;Selección de membresia al momento de registrarse.&#10;El administrador puede ahora crear diferentes tipos de membresía desde el panel de administrador.">
-      <change afterPath="$PROJECT_DIR$/profiles/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/profiles/templates/newProfile.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/profiles/templates/profile.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/profiles/templates/selectProfile.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/profiles/urls.py" afterDir="false" />
+    <list default="true" id="f65f96c1-930a-4a4a-a184-41fdf635109a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/proyecto.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/proyecto.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookflix/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookflix/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookflix/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookflix/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/templates/books/selectProfile.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cuestionario_-_Plantilla.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entrevista_-_Plantilla.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/migrations/0002_auto_20200330_0227.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/templates/books/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/books/templates/books/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/templates/books/book.html" beforeDir="false" afterPath="$PROJECT_DIR$/books/templates/books/book.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/books/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/books/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/templates/profile.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/templates/registration/newProfile.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profiles/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/profiles/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profiles/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/profiles/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profiles/templates/newProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/profiles/templates/newProfile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profiles/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/profiles/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/migrations/0001_initial.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Épicas_-_Plantilla.doc" beforeDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/books/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1215">
+              <caret line="83" column="7" selection-start-line="83" selection-start-column="7" selection-end-line="83" selection-end-column="7" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/books/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="17" column="86" selection-start-line="17" selection-start-column="86" selection-end-line="17" selection-end-column="86" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/books/admin.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="1" selection-end-column="110" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/books/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1935">
+              <caret line="190" column="51" selection-start-line="190" selection-start-column="51" selection-end-line="190" selection-end-column="51" />
+              <folding>
+                <element signature="e#0#45#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../learning_log/learning_logs/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1380">
+              <caret line="96" column="35" selection-start-line="96" selection-start-column="35" selection-end-line="96" selection-end-column="35" />
+              <folding>
+                <element signature="e#0#45#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -36,10 +102,39 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="MERGE" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/profiles/forms.py" />
+        <option value="$PROJECT_DIR$/users/views.py" />
+        <option value="$PROJECT_DIR$/profiles/admin.py" />
+        <option value="$PROJECT_DIR$/users/models.py" />
+        <option value="$PROJECT_DIR$/profiles/views.py" />
+        <option value="$PROJECT_DIR$/books/models.py" />
+        <option value="$PROJECT_DIR$/books/urls.py" />
+        <option value="$PROJECT_DIR$/books/views.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="88" />
+    <option name="y" value="57" />
+    <option name="width" value="1400" />
+    <option name="height" value="820" />
   </component>
   <component name="ProjectId" id="1ZxoKSQ2vewRzLmOULgJTwX6dJ0" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane" />
+    </panes>
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -49,11 +144,24 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/profiles" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Norita\PycharmProjects\Bookflix\profiles" />
     </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -90,10 +198,52 @@
     <option name="localTasksCounter" value="4" />
     <servers />
   </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="-1" width="1366" height="743" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24944155" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24944155" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout-to-restore>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Creación y selección de perfiles.&#10;Se guarda en request.session.get['myProfile'] el id del perfil seleccionado.&#10;(falta eliminar perfil y limite de perfiles por cuenta)" />
     <MESSAGE value="Clase Membresía agregada.&#10;Limite de creación de perfiles según la membresía del usuario.&#10;Selección de membresia al momento de registrarse.&#10;El administrador puede ahora crear diferentes tipos de membresía desde el panel de administrador." />
-    <option name="LAST_COMMIT_MESSAGE" value="Clase Membresía agregada.&#10;Limite de creación de perfiles según la membresía del usuario.&#10;Selección de membresia al momento de registrarse.&#10;El administrador puede ahora crear diferentes tipos de membresía desde el panel de administrador." />
+    <MESSAGE value="decorator algo cambiado&#10;comentarios y calificaciones terminadas, ponele" />
+    <option name="LAST_COMMIT_MESSAGE" value="decorator algo cambiado&#10;comentarios y calificaciones terminadas, ponele" />
   </component>
   <component name="WindowStateProjectService">
     <state x="247" y="113" key="CommitChangelistDialog2" timestamp="1586129440833">
@@ -108,5 +258,157 @@
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="449" y="473" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.984@0.0.1280.984" timestamp="1586126221862" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/users/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/users/urls.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/profiles/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookflix/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="22" column="48" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/users/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/books/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="24" selection-start-column="24" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/profiles/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="23" lean-forward="true" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/profiles/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="28" lean-forward="true" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/users/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="28" lean-forward="true" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/users/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="32" lean-forward="true" selection-start-column="32" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/profiles/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/profiles/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" column="17" lean-forward="true" selection-start-line="36" selection-end-line="37" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/books/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1215">
+          <caret line="83" column="7" selection-start-line="83" selection-start-column="7" selection-end-line="83" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/books/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="17" column="86" selection-start-line="17" selection-start-column="86" selection-end-line="17" selection-end-column="86" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/books/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="1" selection-end-column="110" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../learning_log/learning_logs/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1380">
+          <caret line="96" column="35" selection-start-line="96" selection-start-column="35" selection-end-line="96" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/books/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1935">
+          <caret line="190" column="51" selection-start-line="190" selection-start-column="51" selection-end-line="190" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>
